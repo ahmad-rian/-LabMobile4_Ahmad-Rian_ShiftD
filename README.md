@@ -1,16 +1,77 @@
-# barang
+# Tugas Pertemuan 4
 
-A new Flutter project.
+Nama: **Ahmad Rian Syaifullah Ritonga**  
+NIM: **H1D022010**  
+Shift Baru: **D**
 
-## Getting Started
+## Getting Started Toko Application
 
-This project is a starting point for a Flutter application.
+## Highlight Code
 
-A few resources to get you started if this is your first Flutter project:
+### 1. get url form laravel
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```dart
+static const String apiUrl = 'http://localhost:8000/api/products';
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 2. routes api with laravel sanctum
+
+```php
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
+
+Route::apiResource('products', ProductController::class);
+
+```
+
+### 3. use json
+
+```php
+public function store(Request $request)
+    {
+        $product = Product::create($request->all());
+        return response()->json($product, 201);
+    }
+
+
+    public function show($id)
+    {
+        return Product::findOrFail($id);
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+        return response()->json($product, 200);
+    }
+
+
+    public function destroy($id)
+    {
+        Product::destroy($id);
+        return response()->json(null, 204);
+    }
+```
+
+## Screenshots
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;">
+  <img src="./list.png" alt="List Produk" style="width: 48%; max-width: 300px;"/>
+  <img src="./add_product.png" alt="Tambah Produk" style="width: 48%; max-width: 300px;"/>
+  <img src="./edit.png" alt="Edit produk" style="width: 48%; max-width: 300px;"/>
+  <img src="./delete.png" alt="Delete produk" style="width: 48%; max-width: 300px;"/>
+  <img src="./detail.png" alt="Detail  Produk" style="width: 48%; max-width: 300px;"/>
+  
+</div>
