@@ -247,10 +247,10 @@ class AuthService {
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;">
 <img src="./login.png" alt="List Produk" style="width: 48%; max-width: 300px;"/>
   <img src="./register.png" alt="Tambah Produk" style="width: 48%; max-width: 300px;"/>
-  <img src="./list.png" alt="List Produk" style="width: 48%; max-width: 300px;"/>
-  <img src="./add_product.png" alt="Tambah Produk" style="width: 48%; max-width: 300px;"/>
+  <img src="./produk.png" alt="List Produk" style="width: 48%; max-width: 300px;"/>
+  <img src="./add_produk.png" alt="Tambah Produk" style="width: 48%; max-width: 300px;"/>
   <img src="./edit.png" alt="Edit produk" style="width: 48%; max-width: 300px;"/>
-  <img src="./delete.png" alt="Delete produk" style="width: 48%; max-width: 300px;"/>
+  
   <img src="./detail.png" alt="Detail  Produk" style="width: 48%; max-width: 300px;"/>
   
 </div>
