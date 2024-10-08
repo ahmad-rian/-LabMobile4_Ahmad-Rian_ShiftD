@@ -39,6 +39,9 @@ dependencies:
   google_fonts: ^4.0.0
   flutter_staggered_animations: ^1.1.1
   animate_do: ^2.1.0
+  font_awesome_flutter: ^10.7.0
+  shared_preferences: ^2.3.2
+  rive: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/animations/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
